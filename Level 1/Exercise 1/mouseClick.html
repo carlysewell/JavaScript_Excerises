@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style type="text/css"> 
+ .canvas {
+ 	width:90%;
+	height:75%;
+	background-color:#9C0;
+	
+ }
+  
+ </style>
+</head>
+<body>
+
+
+<canvas id="canvas" class="canvas">
+	</canvas>
+  
+
+<script>
+var canvas=document.getElementById('canvas');
+var context=canvas.getContext('2d');
+
+//boolean variable
+	var clicked = false;
+
+canvas.onmousemove = function(event) { //function(event) stands for event to be executed. 
+console.log("moved...");
+}
+
+canvas.onmousedown = function(event) {
+	console.log("mouse is down...");	
+}
+
+canvas.onmouseup = function(event) {
+	console.log("beam me up scotty!...");	
+}
+
+canvas.onclick = function(event) {
+	console.log("marco?");	
+	clicked = !clicked; //!clicked inverts the result. 1 --> -1 -->1 with each mouse click
+	changeColor();
+}
+
+function changeColor () {
+	console.log("booyah");
+		if(clicked=true) {
+			context.fillStyle = '#000000';	
+		}
+		else if(clicked == false) {
+			context.fillStyle = '#ffffff';	
+		}
+//Draw rectangle
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	}
+	
+	/*
+	another way to execute an event is by using a custom event listener:
+	canvas.addEventListener('click', changeColor, false);
+	*/
+
+</script>
+
+</body>
+</html> 
+
+<!--Takeaways:
+- custom EventListeners
+- always declare the canvas + context 'varibles' at the top of your script body. (var canvas = ....)
+
+- events come from the DOM (aka html body) -->
+
+
