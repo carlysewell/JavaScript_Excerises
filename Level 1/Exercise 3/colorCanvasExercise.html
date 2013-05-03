@@ -1,0 +1,39 @@
+<DOCTYPE! html>
+
+<html>
+
+<head>
+<style>
+ .canvas {
+ 	width:900px;
+	height:750px;
+	background-color:#9C0;
+	border: 1px solid blue;
+	
+	
+ }
+</style>
+</head>
+
+<body>
+	<canvas onmousemove="canvasColour(event)" id="canvas" class="canvas" ></canvas>
+	
+<script>
+
+	function canvasColour(event) {
+		x = event.clientX;
+		y = event.clientY;
+		
+		c = document.getElementById("canvas");
+		h = 'rgb('+x+','+y+',255)';
+		//alert(h);
+		c.style.backgroundColor = h;
+	
+	}
+	
+
+    
+</script>
+      
+</body>
+</html>
